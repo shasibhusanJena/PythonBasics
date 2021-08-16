@@ -9,11 +9,11 @@ This Branch is for learning Helping with some standard examples like
 in order to run above examples , first step would be to create a virtual Environment in a new folder location.
 
 ex:-  
-   ~~- ..\dev-work>mkdir venv
+   - ..\dev-work>mkdir venv
    - ..\dev-work>python -m venv venv
    - ..\dev-work>cd venv
    - ..\dev-work\venv>cd Scripts
    - ..\dev-work\venv\Scripts>activate
-   -  (venv) ..\dev-work\venv\Scripts>~~
+   - ..(venv) ..\dev-work\venv\Scripts>
    
    

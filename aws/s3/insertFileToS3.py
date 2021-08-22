@@ -1,4 +1,5 @@
 import boto
+from boto.exception import S3ResponseError
 from boto.s3.key import Key
 
 AWS_ACCESS_KEY_ID = ''
@@ -15,7 +16,17 @@ s3 = boto.s3.connect_to_region(END_POINT,
                            aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
                            host=S3_HOST)
 
-bucket = s3.get_bucket(BUCKET_NAME)
+while True:
+    try:
+        bucket = s3.get_bucket(BUCKET_NAME)
+        break
+    except S3ResponseError:
+        print("error occur while handling value")
+    except(RuntimeError,TypeError,NameError):
+        pass
+
+
 k = Key(bucket)
 k.key = UPLOADED_FILENAME
 k.set_contents_from_filename(FILENAME)
+
